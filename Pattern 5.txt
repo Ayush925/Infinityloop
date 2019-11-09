@@ -1,0 +1,22 @@
+cleari()
+showAxes()
+showGrid()
+def pattern5=Picture{
+    var a=Picture{
+setPenThickness(0)
+setPenColor(white) 
+setFillColor(white) 
+repeat (4) {
+    forward(50) 
+    right(90) 
+}
+}
+var a1= trans(25,25) * fillColor(red)->Picture.circle(15)
+var a2= trans(25,25) * fillColor(white)->Picture.circle(6)
+var a3= trans(18,0) * fillColor(red)->Picture.rectangle(14, 15)  
+a.draw
+a1.draw
+a2.draw
+a3.draw
+}
+pattern5.draw
