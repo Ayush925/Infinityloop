@@ -1,0 +1,114 @@
+cleari()
+
+showAxes()
+
+showGrid()
+
+var pattern1 = {
+
+    var a = Picture {
+        setPenThickness(0)
+        setPenColor(white)
+        setFillColor(white)
+
+        repeat(4) {
+            forward(70)
+            right(90)
+        }
+    }
+    var a1 = fillColor(color(255,29,142)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 70)
+    picStack(a, a1)
+
+}
+var pattern2={
+
+    var b=Picture{
+setPenThickness(0)
+setPenColor(white) 
+setFillColor(white) 
+
+repeat (4) {
+forward(70) 
+right(90) 
+}
+}
+var b1=fillColor(color(176, 0, 255))*penThickness(0)*trans(27,0)->Picture.rectangle(16,35)
+var b2=fillColor(color(255,29,142))*penThickness(0)*trans(27,27)->Picture.rectangle(43,16)
+
+picStack(b,b1,b2)
+
+}
+var pattern3={
+
+    var c=Picture{
+
+setPenThickness(0)
+
+setPenColor(white) 
+
+setFillColor(white) 
+
+repeat (4) {
+
+    forward(70) 
+
+    right(90) 
+
+}
+
+}
+
+var c1=fillColor(color(176, 0, 255))*penThickness(0)*trans(27,0)->Picture.rectangle(16,70)
+
+var c2=fillColor(color(255,29,142))*penThickness(0)*trans(0,27)->Picture.rectangle(70,16)
+picStack(c,c1,c2)
+
+}
+var pattern4={
+
+    val d=Picture{
+
+setPenThickness(0)
+
+setPenColor(white) 
+
+setFillColor(white) 
+
+repeat (4) {
+
+    forward(70) 
+
+    right(90) 
+
+}
+
+}
+
+val d1=fillColor(red)*penThickness(0)*trans(27,0)->Picture.rectangle(16,35)
+
+val d2=fillColor(red)*penThickness(0)*trans(0,27)->Picture.rectangle(70,16)
+
+picStack(d,d1,d2)
+
+}
+
+draw(pattern1)
+draw(trans(70, 70)->pattern2)
+draw(trans(70, 0)->pattern3)
+draw(trans(0, 70)->pattern4)
+
+pattern1.onMouseClick { (x, y) =>
+    pattern1.rotateAboutPoint(-90, 35, 35)
+}
+
+pattern2.onMouseClick { (x, y) =>
+    pattern2.rotateAboutPoint(-90, 35, 35)
+}
+
+pattern3.onMouseClick { (x, y) =>
+    pattern3.rotateAboutPoint(-90, 35, 35)
+}
+
+pattern4.onMouseClick { (x, y) =>
+    pattern4.rotateAboutPoint(-90, 35, 35)
+}
