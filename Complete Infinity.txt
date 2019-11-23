@@ -1,12 +1,8 @@
 cleari()
 
-showAxes()
+def pattern1 = {
 
-showGrid()
-
-var pattern1 = {
-
-    var a = Picture {
+    val a = Picture {
         setPenThickness(0)
         setPenColor(white)
         setFillColor(white)
@@ -16,134 +12,154 @@ var pattern1 = {
             right(90)
         }
     }
-    var a1 = fillColor(color(255,29,142)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 70)
+    val a1 = fillColor(color(255, 29, 142)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 70)
     picStack(a, a1)
 
 }
-var pattern2={
+def pattern2 = {
 
-    var b=Picture{
-setPenThickness(0)
-setPenColor(white) 
-setFillColor(white) 
+    val b = Picture {
+        setPenThickness(0)
+        setPenColor(white)
+        setFillColor(white)
 
-repeat (4) {
-forward(70) 
-right(90) 
-}
-}
-var b1=fillColor(color(176, 0, 255))*penThickness(0)*trans(27,0)->Picture.rectangle(16,35)
-var b2=fillColor(color(255,29,142))*penThickness(0)*trans(27,27)->Picture.rectangle(43,16)
+        repeat(4) {
+            forward(70)
+            right(90)
+        }
+    }
+    val b1 = fillColor(color(176, 0, 255)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 35)
+    val b2 = fillColor(color(255, 29, 142)) * penThickness(0) * trans(27, 27) -> Picture.rectangle(43, 16)
 
-picStack(b,b1,b2)
-
-}
-var pattern3={
-
-    var c=Picture{
-
-setPenThickness(0)
-
-setPenColor(white) 
-
-setFillColor(white) 
-
-repeat (4) {
-
-    forward(70) 
-
-    right(90) 
+    picStack(b, b1, b2)
 
 }
+def pattern3 = {
+
+    val c = Picture {
+
+        setPenThickness(0)
+
+        setPenColor(white)
+
+        setFillColor(white)
+
+        repeat(4) {
+
+            forward(70)
+
+            right(90)
+
+        }
+
+    }
+
+    val c1 = fillColor(color(176, 0, 255)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 70)
+
+    val c2 = fillColor(color(255, 29, 142)) * penThickness(0) * trans(0, 27) -> Picture.rectangle(70, 16)
+    picStack(c, c1, c2)
 
 }
+def pattern4 = {
 
-var c1=fillColor(color(176, 0, 255))*penThickness(0)*trans(27,0)->Picture.rectangle(16,70)
+    val d = Picture {
 
-var c2=fillColor(color(255,29,142))*penThickness(0)*trans(0,27)->Picture.rectangle(70,16)
-picStack(c,c1,c2)
+        setPenThickness(0)
 
-}
-var pattern4={
+        setPenColor(white)
 
-    val d=Picture{
+        setFillColor(white)
 
-setPenThickness(0)
+        repeat(4) {
 
-setPenColor(white) 
+            forward(70)
 
-setFillColor(white) 
+            right(90)
 
-repeat (4) {
+        }
 
-    forward(70) 
+    }
 
-    right(90) 
+    val d1 = fillColor(color(176, 0, 255)) * penThickness(0) * trans(27, 0) -> Picture.rectangle(16, 35)
 
-}
+    val d2 = fillColor(color(255, 29, 142)) * penThickness(0) * trans(0, 27) -> Picture.rectangle(70, 16)
 
-}
-
-val d1=fillColor(color(176, 0, 255))*penThickness(0)*trans(27,0)->Picture.rectangle(16,35)
-
-val d2=fillColor(color(255,29,142))*penThickness(0)*trans(0,27)->Picture.rectangle(70,16)
-
-picStack(d,d1,d2)
+    picStack(d, d1, d2)
 
 }
+def pattern5 = {
 
+    val e = Picture {
 
-var pattern5={
+        setPenThickness(0)
 
-    var e=Picture{
+        setPenColor(white)
 
-setPenThickness(0)
+        setFillColor(white)
 
-setPenColor(white) 
+        repeat(4) {
 
-setFillColor(white) 
+            forward(70)
 
-repeat (4) {
+            right(90)
 
-    forward(70) 
+        }
 
-    right(90) 
+    }
 
+    val e1 = trans(35, 35) * fillColor(color(176, 0, 255)) -> Picture.circle(20)
+
+    val e2 = trans(35, 35) * fillColor(white) -> Picture.circle(10)
+
+    val e3 = trans(28, 0) * fillColor(color(255, 29, 142)) -> Picture.rectangle(14, 15)
+    picStack(e, e1, e2, e3)
 }
 
+var p1 = pattern3
+var p2 = pattern1
+var p3 = pattern1
+var p4 = pattern5
+var p4 = pattern5
+
+draw(trans(-35, -35) -> p1)
+draw(trans(-105, -35) -> p2)
+draw(trans(35, -35) -> p3)
+draw(trans(-140, -35) -> p4)
+draw(trans(70, -35) -> p5)
+
+
+
+p1.onMouseClick { (x, y) =>
+    p1.rotateAboutPoint(-90, 35, 35)
 }
 
-var e1= trans(35,35) * fillColor(color(176, 0, 255))->Picture.circle(20)
-
-var e2= trans(35,35) * fillColor(white)->Picture.circle(10)
-
-var e3= trans(28,0) * fillColor(color(255,29,142))->Picture.rectangle(14, 15)  
-picStack(e,e1,e2,e3)
+p2.onMouseClick { (x, y) =>
+    p2.rotateAboutPoint(-90, 35, 35)
+    println("p2 click")
 }
 
-
-
-draw(pattern1)
-draw(trans(70, 70)->pattern2)
-draw(trans(70, 0)->pattern3)
-draw(trans(0, 70)->pattern4)
-draw(trans(0, 140)->pattern5)
-
-pattern1.onMouseClick { (x, y) =>
-    pattern1.rotateAboutPoint(-90, 35, 35)
+p3.onMouseClick { (x, y) =>
+    println("p3 click")
+    p3.rotateAboutPoint(-90, 35, 35)
 }
 
-pattern2.onMouseClick { (x, y) =>
-    pattern2.rotateAboutPoint(-90, 35, 35)
+p4.onMouseClick { (x, y) =>
+    p4.rotateAboutPoint(-90, 35, 35)
+}
+p5.onMouseClick { (x, y) =>
+    p5.rotateAboutPoint(-90, 35, 35)
 }
 
-pattern3.onMouseClick { (x, y) =>
-    pattern3.rotateAboutPoint(-90, 35, 35)
+def checkLogic(): Boolean = {
+    val f1 = (p1.heading == 270)
+
+    val f3 = true
+    val f4 = true
+
+    f1 && f3 && f4
 }
 
-pattern4.onMouseClick { (x, y) =>
-    pattern4.rotateAboutPoint(-90, 35, 35)
+if (checkLogic()) {
+    print("hi")
 }
-pattern5.onMouseClick { (x, y) =>
-    pattern5.rotateAboutPoint(-90, 35, 35)
-}
+
